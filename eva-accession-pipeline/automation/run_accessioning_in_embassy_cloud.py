@@ -88,7 +88,7 @@ def get_properties_files_for_study(accessioning_common_props):
                       .format(**accessioning_common_props)) if "eva1370_embassy" not in filename.lower()]
 
 
-def rerun_accessioning_for_study(project_accession, accessioning_common_props):
+def run_accessioning_for_study_in_embassy_cloud(project_accession, accessioning_common_props):
     accessioning_common_props["PROJECT_ACCESSION"] = project_accession
 
     modified_properties_files = [create_properties_file_with_new_config(properties_file, accessioning_common_props)
@@ -106,7 +106,7 @@ def rerun_accessioning_for_study(project_accession, accessioning_common_props):
 @click.option("-c", "--config-file", required=True)
 @click.command()
 def main(project_accession, config_file):
-    rerun_accessioning_for_study(project_accession, get_args_from_private_config_file(config_file))
+    run_accessioning_for_study_in_embassy_cloud(project_accession, get_args_from_private_config_file(config_file))
 
 
 if __name__ == '__main__':
