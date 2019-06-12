@@ -24,7 +24,7 @@ import configparser
 import sys
 from __init__ import logger
 
-sys.path.append("../eva-accession-import-automation")
+sys.path.append("../../eva-accession-import-automation")
 from get_assembly_report_url import get_assembly_report_url
 
 
