@@ -66,8 +66,7 @@ def create_properties_file_with_new_config(properties_file, accessioning_common_
                    .format(**accessioning_common_props))
         parser.set(section=properties_section_name, option="spring.data.mongodb.host",
                    value=str(accessioning_common_props["ACCESSIONING_MONGO_HOST"]))
-        parser.set(section=properties_section_name, option="spring.data.mongodb.database",
-                   value="eva_accession_" + str(accessioning_common_props["PROJECT_ACCESSION"]))
+        parser.set(section=properties_section_name, option="spring.data.mongodb.database", value="eva_accession")
         parser.set(section=properties_section_name, option="parameters.assemblyReportUrl",
                    value=get_assembly_report_url(parser.get(section=properties_section_name,
                                                             option="parameters.assemblyAccession")))
